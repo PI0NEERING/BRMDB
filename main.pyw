@@ -10,17 +10,7 @@ man_path = os.path.join(current_dir, "man.pyw")
 
 if not sys.platform.startswith('win'):
     subprocess.Popen(["python", err_path, "Please use Windows OS"], creationflags=subprocess.CREATE_NO_WINDOW)
-    exit()
-
-def check_xdelta3():
-    try:
-        subprocess.check_call(["xdelta3", "--version"])
-        print("xdelta3 is already installed on the system.")
-    except FileNotFoundError:
-        print("xdelta3 is not installed. Installing...")
-        install("xdelta3")
-        print("xdelta3 has been successfully installed.")
-
+    exit
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
@@ -35,8 +25,6 @@ def startupman():
     buttonClicked = not buttonClicked
     subprocess.Popen(["python", man_path], creationflags=subprocess.CREATE_NO_WINDOW)
     exit()
-
-check_xdelta3()
 
 buttonClicked  = False # Before first click
 
