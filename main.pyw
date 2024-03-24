@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 import subprocess
 import sys
 import os
@@ -10,33 +11,35 @@ man_path = os.path.join(current_dir, "man.pyw")
 
 if not sys.platform.startswith('win'):
     subprocess.Popen(["python", err_path, "Please use Windows OS"], creationflags=subprocess.CREATE_NO_WINDOW)
-    exit
+    exit()
+
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
 def startupins():
     global buttonClicked
     buttonClicked = not buttonClicked
-    subprocess.Popen(["python", ins_path], creationflags=subprocess.CREATE_NO_WINDOW)
+    subprocess.Popen(["python", ins_path])
     exit()
 
 def startupman():
     global buttonClicked
     buttonClicked = not buttonClicked
-    subprocess.Popen(["python", man_path], creationflags=subprocess.CREATE_NO_WINDOW)
+    subprocess.Popen(["python", man_path])
     exit()
 
 buttonClicked  = False # Before first click
 
 window = tk.Tk()
 window.title("BRMDB")  # Set the title of the window
+window.configure(bg='#34A2FE')
 
-greeting = tk.Label(text="Buckshot Roulette Mod Database GUI", background="#34A2FE", font=('Arial', 25))
-startupins_button = tk.Button(text="Start installer", width=25, height=5, bg="#2467a0", command=startupins)
-startup_button = tk.Button(text="Start mod manager", width=25, height=5, bg="#2467a0", command=startupman)
+greeting = tk.Label(window, text="Buckshot Roulette Mod Database GUI", background="#34A2FE", font=('Arial', 25), pady=20)
+startupins_button = tk.Button(window, text="Start Installer", width=20, height=2, bg="#2467a0", fg="white", font=('Arial', 12, 'bold'), command=startupins)
+startup_button = tk.Button(window, text="Start Mod Manager", width=20, height=2, bg="#2467a0", fg="white", font=('Arial', 12, 'bold'), command=startupman)
 
 greeting.pack()
-startupins_button.pack()
-startup_button.pack()
+startupins_button.pack(pady=10)
+startup_button.pack(pady=10)
 
 window.mainloop()

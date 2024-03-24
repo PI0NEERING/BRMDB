@@ -39,9 +39,10 @@ def refresh_modlist_text():
 
 window = tk.Tk()
 window.title("Mod Manager")  # Set the title of the window
+window.configure(bg='#34A2FE')
 
-greeting = tk.Label(text="Manage Mods", background="#34A2FE", font=('Arial', 25))
-open_button = tk.Button(text="Open Mod Directory", width=25, height=5, bg="#2467a0", command=open_directory)
+greeting = tk.Label(window, text="Manage Mods", background="#34A2FE", font=('Arial', 25), pady=20)
+open_button = tk.Button(window, text="Open Mod Directory", width=25, height=2, bg="#2467a0", fg="white", font=('Arial', 12, 'bold'), command=open_directory)
 modlist_label = tk.Label(window, text="Mod List:", font=('Arial', 20))
 
 modlist_text = tk.Text(window, height=10, width=50, font=('Arial', 12))
@@ -59,7 +60,7 @@ modlist_text.pack(pady=5)
 with open(modlist_path, 'r') as file:
     for mod_name in file:
         mod_name = mod_name.strip()  # Remove leading/trailing whitespace
-        delete_button = tk.Button(window, text=f"Delete {mod_name}", command=lambda name=mod_name: delete_mod(name))
+        delete_button = tk.Button(window, text=f"Delete {mod_name}", bg="#2467a0", fg="white", font=('Arial', 10, 'bold'), command=lambda name=mod_name: delete_mod(name))
         delete_button.pack()
 
 window.mainloop()
