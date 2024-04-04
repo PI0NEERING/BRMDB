@@ -58,7 +58,7 @@ def search_and_download():
 def apply_patch(keyword):
     try:
         # Make a copy of Buckshot Roulette.exe as br.exe
-        source_file = r"C:\Program Files (x86)\Steam\steamapps\common\Buckshot Roulette\Buckshot Roulette.exe"
+        source_file = r"C:\Program Files (x86)\Steam\steamapps\common\Buckshot Roulette\Buckshot Roulette_windows\Buckshot Roulette.exe"
         
         # Apply the patch to br.exe
         patch_file = "temp.xdelta"
