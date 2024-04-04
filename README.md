@@ -3,4 +3,3 @@ BRMDB (Buckshot Roulette Mod Database) is an innovative, open-source mod manager
 
 ## IMPORTANT NOTE:
 This was designed for the steam version and will not work for normal games!
-If you wish to use it make a copy of your Buckshot Roulette at "C:\Program Files (x86)\Steam\steamapps\common\Buckshot Roulette\Buckshot Roulette.exe"
