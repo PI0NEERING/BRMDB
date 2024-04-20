@@ -3,3 +3,6 @@ BRMDB (Buckshot Roulette Mod Database) is an innovative, open-source mod manager
 
 ## IMPORTANT NOTE:
 This was designed for the steam version and will not work for normal games!
+
+## EOL REACHED
+Unfortunetly since I did not properly advertise this nobody has submitted any mods and this project has reached end of life.
